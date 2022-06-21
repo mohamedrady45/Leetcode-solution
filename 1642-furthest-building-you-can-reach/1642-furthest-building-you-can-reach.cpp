@@ -13,8 +13,7 @@ public:
             bricks=x,ladders=y;
             for (int i=1;i<=mid;i++)
             {
-                if (v[i]-v[i-1]>0)
-                d.push_back(v[i]-v[i-1]);
+                d.push_back(max(0,v[i]-v[i-1]));
             }
             sort(all(d));
             reverse (all(d));
