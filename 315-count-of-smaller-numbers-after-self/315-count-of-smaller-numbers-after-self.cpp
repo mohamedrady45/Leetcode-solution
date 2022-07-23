@@ -6,13 +6,13 @@ class Solution {
 public:
     vector<int> countSmaller(vector<int>& nums) {
         ordered_set<int>st;
-        vector<int> res;
-        reverse (nums.begin(),nums.end());
-        for (auto i:nums){
-            res.push_back (st.order_of_key(i));
-            st.insert(i);
+        vector<int> res(nums.size());
+        int n=nums.size();
+        for (int i=n-1;i>=0;i--){
+        res[i]= (st.order_of_key(nums[i]));
+            st.insert(nums[i]);
         }
-         reverse (res.begin(),res.end());
+        
         return res;
     }
 };
