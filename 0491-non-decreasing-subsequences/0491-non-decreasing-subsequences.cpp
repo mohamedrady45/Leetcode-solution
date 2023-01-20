@@ -6,15 +6,13 @@ public:
         for (int i=0;i<(1<<n);i++){
             vector<int>curr;
             for (int j=0;j<n;j++){
-               if (i&(1<<j))
+               if (!(i&(1<<j)))
                    curr.push_back(nums[j]);
             }
             if(curr.size()>=2 && is_sorted(curr.begin(),curr.end()))
             st.insert(curr);
         }
-         vector<vector<int>>ans;
-         for (auto &i : st)
-             ans.push_back(i);
+         vector<vector<int>>ans(st.begin(),st.end());
         return ans;
     }
 };
