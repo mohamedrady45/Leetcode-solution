@@ -9,7 +9,10 @@ public:
         int ans = -1;
         for (int i=1;i<=n;i++){
             if (in[i]==n-1 && out[i]==0)
-            ans = i;
+            {
+                ans = i;
+                break;
+            }
         }
         return ans;
     }
