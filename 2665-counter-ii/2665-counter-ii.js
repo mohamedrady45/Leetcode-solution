@@ -4,16 +4,11 @@
  */
 var createCounter = function(init) {
     let x = init;
-    function increment () {
-        return ++x;
+    return {
+        increment : () => ++x,
+        decrement : () =>  --x,
+        reset     : () =>  x = init,
     }
-     function decrement () {
-        return --x;
-    }
-     function reset () {
-        return x = init;
-    }
-    return {increment , decrement , reset};
 };
 
 /**
